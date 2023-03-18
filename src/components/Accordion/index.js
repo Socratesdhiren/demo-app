@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { MoreOutlined, HomeFilled } from "@ant-design/icons";
+import { HomeFilled } from "@ant-design/icons";
 
 import SampleData from "./SampleData";
 import DataSetListView from "./DataSetListView";
+import { ThreeDotSVG } from "../../assets/svg_files";
 
 const ActiveDataSample = styled.div`
   display: flex;
@@ -38,9 +39,7 @@ const SampleInfo = styled.div`
     opacity: 1;
   }
 `;
-const DataField = styled(SampleInfo)`
-  line-height: normal;
-`;
+
 const index = () => {
   return (
     <>
@@ -53,10 +52,11 @@ const index = () => {
           </div>
         </SampleInfo>
         <div>
-          <MoreOutlined />
+          <ThreeDotSVG />
         </div>
       </ActiveDataSample>
       <SampleData />
+
       <DataSetListView />
     </>
   );

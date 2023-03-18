@@ -15,7 +15,14 @@
 
   .ant-layout-header {
     background: #FFFFFF 0% 0% no-repeat padding-box;
+    padding-inline: 16px;
     border-bottom: 1px solid #D2DAE5;
+  }
+
+  .dropdown-options .ant-dropdown-menu{
+    min-width: 180px;
+  }
+ .ant-dropdown-menu-item-only-child{
+    padding: 5px 6px !important;
 
   }
-  

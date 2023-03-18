@@ -5,33 +5,28 @@ import { Row, Col, Checkbox } from "antd";
 import QuickBar from "./QuickBar";
 import TotalRecords from "./TotalRecords";
 import ColumnDetail from "./ColumnDetail";
+import TableList from "./VirtualList";
+import { HashIcon, InfoIcon } from "../../assets/svg_files";
+
+import { InfoCircleOutlined, FontColorsOutlined } from "@ant-design/icons";
 
 const TableDetailWrapper = styled.div`
   padding: 14px 24px 16px 14px;
 `;
 const plainOptions = ["Table", "Schema", "Option 3"];
 
-const TableWrap = styled(Table)`
-  height: 479px;
-  .ant-table-thead {
-    background: #eff0f5 0% 0% no-repeat padding-box;
-  }
-  .ant-table-thead .ant-table-cell {
-    background: inherit;
-    border-radius: 0;
-    border-start-end-radius: 0 !important;
-  }
-`;
-
 const CheckboxWrapper = styled.div`
   display: flex;
   margin-bottom: 20px;
   .ant-checkbox-wrapper {
     border: 1px solid #d2dae5;
-    padding: 2px 7px;
+    padding: 4px 8px;
     width: 117px;
     border-radius: 4px;
     opacity: 1;
+  }
+  .ant-checkbox .ant-checkbox-inner {
+    border-radius: 11px;
   }
 `;
 
@@ -69,39 +64,62 @@ const ActionCircleButton = styled(CircleButton)`
   width: 42px;
 `;
 
+const ColumnTitile = styled.div`
+  display: flex;
+  align-items: center;
+  line-height: normal;
+  svg {
+    margin: 0 4px;
+    color: #8d9cb5;
+
+  }
+`;
+
 const DataTable = () => {
-  const [dataLists, setDataLists] = useState([]);
-
-  // const { searchValue } = useTableList();
-
-  // const debouncedSearchValue = useDebounce(searchValue, 500);
-
   const columns = [
     {
-      title: "geo_id",
+      title: (_) => (
+        <ColumnTitile>
+          {<HashIcon />} geo_id {<InfoCircleOutlined />}
+        </ColumnTitile>
+      ),
       dataIndex: "name",
-      render: (_, record) => <div>{}</div>,
     },
 
     {
-      title: "location",
-      dataIndex: "role",
+      title: (_) => (
+        <ColumnTitile>
+          {<FontColorsOutlined />} location {<InfoCircleOutlined />}
+        </ColumnTitile>
+      ),
+      dataIndex: "location",
       render: (text) => <div>{text || "-"}</div>,
     },
     {
-      title: "contact_no",
-      dataIndex: "apiKey",
-      // width: 200,
+      title: (_) => (
+        <ColumnTitile>
+          {<HashIcon />} contact_no {<InfoCircleOutlined />}
+        </ColumnTitile>
+      ),
+      dataIndex: "contact_no",
     },
   ];
-
-  //   useEffect(() => {
-  //     dataLists?.length && setDataLists(dataLists);
-  //   }, [dataLists]);
 
   const onChange = (checkedValues) => {
     console.log("checked = ", checkedValues);
   };
+
+  const dataLists = Array.from(
+    {
+      length: 50000,
+    },
+    (_, key) => ({
+      key,
+      name: "Dhirendra",
+      location: "Test,4,Nepal",
+      contact_no: "987123213",
+    })
+  );
 
   return (
     <>
@@ -118,13 +136,7 @@ const DataTable = () => {
 
         <Row gutter={16}>
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-            <TableWrap
-              showSorterTooltip={false}
-              columns={columns}
-              dataSource={dataLists || []}
-              pagination={false}
-              rowKey={(record) => record?._id}
-            />
+            <TableList columns={columns} data={dataLists} />
           </Col>
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             <TotalRecords />

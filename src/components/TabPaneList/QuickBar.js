@@ -5,7 +5,8 @@ import {
   AppleOutlined,
   DownOutlined,
 } from "@ant-design/icons";
-import { Dropdown, Button, Space } from "antd";
+import { Dropdown, Button, Space, Input } from "antd";
+import { FullScreenIconSVG, SearchOutlinedSVG } from "../../assets/svg_files";
 
 const MainWrapper = styled.div`
   display: flex;
@@ -27,20 +28,33 @@ const items = [
   },
 ];
 
+const IconSpan = styled.span`
+  display: flex;
+  margin: 0 4px;
+  align-items: center;
+  padding: 8px 10px;
+  background: #f3f4f8 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  opacity: 1;
+`
+
 const RightWrapper = styled.div`
   display: flex;
   flex: 1 auto;
   justify-content: end;
+
 `;
 
 const SampleText = styled.span`
   margin-right: 12px;
   font-size: 16px;
   font-weight: 600;
+  line-height: normal;
 `;
 
 const LeftWrapper = styled(RightWrapper)`
   justify-content: start;
+  
   align-items: center;
   .ant-space-align-center {
     gap: 60px !important;
@@ -52,6 +66,7 @@ const LeftWrapper = styled(RightWrapper)`
     border: 1px solid #d2dae5;
   }
 `;
+
 const QuickBar = () => {
   const handleMenuClick = (e) => {
     console.log("click", e);
@@ -60,6 +75,8 @@ const QuickBar = () => {
     items,
     onClick: handleMenuClick,
   };
+
+
   return (
     <MainWrapper>
       <LeftWrapper>
@@ -75,9 +92,15 @@ const QuickBar = () => {
       </LeftWrapper>
 
       <RightWrapper>
-        <AndroidOutlined />
-
-        <AppleOutlined />
+ 
+        <IconSpan>
+          <SearchOutlinedSVG />
+  
+          
+        </IconSpan>
+        <IconSpan>
+          <FullScreenIconSVG />
+        </IconSpan>
       </RightWrapper>
     </MainWrapper>
   );

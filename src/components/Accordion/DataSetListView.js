@@ -1,22 +1,37 @@
 import React from "react";
-
 import styled from "styled-components";
+import { Input } from "antd";
+
+import { ThreeDotSVG, SearchBox } from "../../assets/svg_files";
 
 export const WrapperDiv = styled.div`
- padding: 12px 8px;
+  padding: 12px 8px 0 12px;
+`;
+
+const StyledSearch = styled(Input)`
+margin-bottom: 12px;
+background: #F5F6F9 0% 0% no-repeat padding-box;
+.ant-input{
+  background: #F5F6F9 0% 0% no-repeat padding-box;
+}
+`
+
+const StyledUI = styled.div`
+max-height: 180px;
+overflow-y: scroll;
 `
 
 const StyledList = styled.div`
-width: auto;
-height: 54px;
-border: 1px solid #D2DAE5;
-border-radius: 8px;
-margin-bottom: 14px;
-opacity: 1;
-display: flex;
-align-items: center;
-justify-content: center;
-`
+  width: auto;
+  height: 54px;
+  border: 1px solid #d2dae5;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 const dataSetList = [
   {
     title: "Dataset 1",
@@ -32,8 +47,18 @@ const dataSetList = [
   },
 ];
 const DataSetListView = () => {
+  return (
+    <WrapperDiv>
+      <StyledSearch placeholder="Search " prefix={<SearchBox />} />
+      <StyledUI>
+      {dataSetList.map((data) => (
+        <StyledList>{data?.title}</StyledList>
+      ))}
 
-  return <WrapperDiv>{dataSetList.map(data => <StyledList>{data?.title}</StyledList>)}</WrapperDiv>;
+      </StyledUI>
+     
+    </WrapperDiv>
+  );
 };
 
 export default DataSetListView;
