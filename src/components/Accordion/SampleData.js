@@ -29,7 +29,7 @@ const StyledCollapse = styled(Collapse)`
     opacity: 1;
   }
   .ant-collapse-item {
-    border-bottom: 1px solid #dfe6f0;
+    border-bottom: 1px solid #dfe6f0 !important;
   }
 `;
 
