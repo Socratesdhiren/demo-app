@@ -6,7 +6,7 @@ import HeaderSection from "./HeaderSection";
 import Dashboard from "./Dashboard";
 const { Header, Content } = Layout;
 
-function App() {
+const App = () => {
   return (
     <Layout>
       <Header>
