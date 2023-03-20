@@ -1,5 +1,22 @@
 export const BASE_URL = "";
-
+export const DataSetList = [
+  {
+    title: "Dataset 1",
+    records: "135 k",
+  },
+  {
+    title: "Dataset 2",
+    records: "205 k",
+  },
+  {
+    title: "Dataset 3",
+    records: "215 k",
+  },
+  {
+    title: "Dataset 5",
+    records: "231 k",
+  },
+];
 export const SampleDataItems = [
   {
     type: "group",

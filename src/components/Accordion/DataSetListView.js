@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { Input } from "antd";
-import { HomeFilled } from "@ant-design/icons";
+import { HomeFilled, MoreOutlined } from "@ant-design/icons";
 
 import { SearchBox, ThreeDotSVG } from "../../assets/svg_files";
+import { DataSetList } from "../../constants/variable";
 
 export const WrapperDiv = styled.div`
   padding: 12px 8px 0 12px;
 `;
 
 const StyledSearch = styled(Input)`
-  margin-bottom: 12px;
+  margin-bottom: 2px;
   background: #f5f6f9 0% 0% no-repeat padding-box;
   .ant-input {
     background: #f5f6f9 0% 0% no-repeat padding-box;
@@ -25,15 +26,19 @@ const StyledUI = styled.div`
 const dataSetList = [
   {
     title: "Dataset 1",
-    records: "235 k",
+    records: "135 k",
   },
   {
     title: "Dataset 2",
-    records: "235 k",
+    records: "205 k",
   },
   {
     title: "Dataset 3",
-    records: "235 k",
+    records: "215 k",
+  },
+  {
+    title: "Dataset 5",
+    records: "231 k",
   },
 ];
 
@@ -48,6 +53,12 @@ const ActiveDataSample = styled.div`
   opacity: 1;
   padding: 6px 12px;
   margin: 12px 12px 0;
+  .anticon-more {
+    background: #f5f6f9;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 5px;
+  }
 `;
 
 const SampleInfo = styled.div`
@@ -70,6 +81,7 @@ const SampleInfo = styled.div`
   [title~="sub-heading"] {
     font-size: 12px;
     opacity: 1;
+    color: ${({ isactive }) => (isactive ? "#1276ff" : "#A2B2C7")};
   }
 `;
 
@@ -80,12 +92,10 @@ export const SampleDataView = ({ isActive, data }) => {
         {isActive && <HomeFilled />}
         <div>
           <div title="heading">{data?.title}</div>
-          <div title="sub-heading">{data?.records}</div>
+          <div title="sub-heading">{data?.records} records</div>
         </div>
       </SampleInfo>
-      <div>
-        <ThreeDotSVG />
-      </div>
+      <div>{isActive ? <ThreeDotSVG /> : <MoreOutlined />}</div>
     </ActiveDataSample>
   );
 };
@@ -95,7 +105,7 @@ const DataSetListView = () => {
     <WrapperDiv>
       <StyledSearch placeholder="Search " prefix={<SearchBox />} />
       <StyledUI>
-        {dataSetList.map((data) => (
+        {DataSetList.map((data) => (
           <SampleDataView key={data?.title} data={data} />
         ))}
       </StyledUI>
