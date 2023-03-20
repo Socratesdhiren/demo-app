@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Input, Row, Col } from "antd";
 import { LeftOutlined } from "@ant-design/icons";
-import { SearchBox } from '../assets/svg_files'
+import { SearchBox } from "../assets/svg_files";
 
-const LeftWrapper = styled(Col)` 
+const LeftWrapper = styled(Col)`
   align-items: center;
   span {
     font-size: 24px;
@@ -22,20 +22,16 @@ const LeftWrapper = styled(Col)`
   }
 `;
 
-
 const HeaderSection = () => {
   return (
     <Row>
-      <LeftWrapper  xs={24} sm={24} md={12} lg={12} xl={12}>
+      <LeftWrapper xs={24} sm={24} md={12} lg={12} xl={12}>
         <LeftOutlined />
         <span>Sample data 1</span>
       </LeftWrapper>
 
       <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-        <Input
-          placeholder="search datasets"
-          prefix={<SearchBox />}
-        />
+        <Input placeholder="search datasets" prefix={<SearchBox />} />
       </Col>
     </Row>
   );

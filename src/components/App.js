@@ -10,10 +10,10 @@ function App() {
   return (
     <Layout>
       <Header>
-        <HeaderSection/>
+        <HeaderSection />
       </Header>
       <Content>
-        <Dashboard/>
+        <Dashboard />
       </Content>
     </Layout>
   );

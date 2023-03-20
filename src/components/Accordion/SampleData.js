@@ -1,10 +1,11 @@
-import React from "react";
-
+import React, { useMemo } from "react";
+import styled from "styled-components";
 import { PlusOutlined } from "@ant-design/icons";
 import { Collapse, Dropdown } from "antd";
+
 import { WrapperDiv } from "./DataSetListView";
-import styled from "styled-components";
 import { NoSampleDataSVG } from "../../assets/svg_files";
+import { SampleDataItems } from "../../constants/variable";
 
 const { Panel } = Collapse;
 
@@ -45,27 +46,13 @@ const StyledNoSampleData = styled.div`
   border-top: 1px solid #dfe6f0;
   color: #5e6c84;
 `;
-const items = [
-  {
-    type: "group",
-    label: " Sample data ",
-    children: [
-      {
-        label: "Option 1",
-        key: "setting:1",
-      },
-      {
-        label: "Option 2",
-        key: "setting:2",
-      },
-    ],
-  },
-];
 
 const SampleData = () => {
   const onChange = (key) => {
     console.log(key);
   };
+  const items = useMemo(() => SampleDataItems, []);
+
   const genExtra = () => (
     <Dropdown
       menu={{
@@ -76,7 +63,9 @@ const SampleData = () => {
     >
       <PlusOutlined
         onClick={(event) => {
+          event.preventDefault();
           event.stopPropagation();
+          //
         }}
       />
     </Dropdown>

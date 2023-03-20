@@ -5,7 +5,7 @@ import {
   AppleOutlined,
   DownOutlined,
 } from "@ant-design/icons";
-import { Dropdown, Button, Space, Input } from "antd";
+import { Dropdown, Button, Space } from "antd";
 import { FullScreenIconSVG, SearchOutlinedSVG } from "../../assets/svg_files";
 
 const MainWrapper = styled.div`
@@ -36,13 +36,13 @@ const IconSpan = styled.span`
   background: #f3f4f8 0% 0% no-repeat padding-box;
   border-radius: 6px;
   opacity: 1;
-`
+`;
 
 const RightWrapper = styled.div`
   display: flex;
   flex: 1 auto;
   justify-content: end;
-
+  align-items: center;
 `;
 
 const SampleText = styled.span`
@@ -54,7 +54,7 @@ const SampleText = styled.span`
 
 const LeftWrapper = styled(RightWrapper)`
   justify-content: start;
-  
+
   align-items: center;
   .ant-space-align-center {
     gap: 60px !important;
@@ -76,7 +76,6 @@ const QuickBar = () => {
     onClick: handleMenuClick,
   };
 
-
   return (
     <MainWrapper>
       <LeftWrapper>
@@ -92,11 +91,8 @@ const QuickBar = () => {
       </LeftWrapper>
 
       <RightWrapper>
- 
         <IconSpan>
           <SearchOutlinedSVG />
-  
-          
         </IconSpan>
         <IconSpan>
           <FullScreenIconSVG />

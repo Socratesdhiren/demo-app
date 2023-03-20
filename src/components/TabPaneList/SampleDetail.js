@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import { Button, Table } from "antd";
+import React from "react";
 import styled from "styled-components";
 import { Row, Col, Checkbox } from "antd";
 import QuickBar from "./QuickBar";
 import TotalRecords from "./TotalRecords";
 import ColumnDetail from "./ColumnDetail";
 import TableList from "./VirtualList";
-import { HashIcon, InfoIcon } from "../../assets/svg_files";
+import { HashIcon } from "../../assets/svg_files";
 
 import { InfoCircleOutlined, FontColorsOutlined } from "@ant-design/icons";
+import { CheckboxPlainOptions } from "../../constants/variable";
+import { VirtualListData } from "../../constants/CommonUtils";
 
 const TableDetailWrapper = styled.div`
   padding: 14px 24px 16px 14px;
 `;
-const plainOptions = ["Table", "Schema", "Option 3"];
 
 const CheckboxWrapper = styled.div`
   display: flex;
@@ -42,28 +42,6 @@ const TitleWrapper = styled.div`
   font-size: 18px;
 `;
 
-const ActionWrap = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  a.ant-btn {
-    padding: 8px !important;
-  }
-`;
-
-const CircleButton = styled(Button)`
-  margin-left: ${({ hasedit }) => (hasedit ? "4px" : "")}}
-  color: #5d97ff;
-  text-align: center;
-  border-color: #dee8ff;
-  height: 24px;
-  width: 24px;
-`;
-
-const ActionCircleButton = styled(CircleButton)`
-  height: 41px;
-  width: 42px;
-`;
-
 const ColumnTitile = styled.div`
   display: flex;
   align-items: center;
@@ -71,7 +49,6 @@ const ColumnTitile = styled.div`
   svg {
     margin: 0 4px;
     color: #8d9cb5;
-
   }
 `;
 
@@ -106,20 +83,8 @@ const DataTable = () => {
   ];
 
   const onChange = (checkedValues) => {
-    console.log("checked = ", checkedValues);
+    //console.log("checked = ", checkedValues);
   };
-
-  const dataLists = Array.from(
-    {
-      length: 50000,
-    },
-    (_, key) => ({
-      key,
-      name: "Dhirendra",
-      location: "Test,4,Nepal",
-      contact_no: "987123213",
-    })
-  );
 
   return (
     <>
@@ -128,15 +93,16 @@ const DataTable = () => {
       <TableDetailWrapper>
         <CheckboxWrapper>
           <Checkbox.Group
-            options={plainOptions}
-            defaultValue={["Apple"]}
+            options={CheckboxPlainOptions}
+            defaultValue={["Option 3"]}
             onChange={onChange}
+            defaultChecked
           />
         </CheckboxWrapper>
 
         <Row gutter={16}>
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-            <TableList columns={columns} data={dataLists} />
+            <TableList columns={columns} data={VirtualListData} />
           </Col>
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             <TotalRecords />

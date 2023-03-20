@@ -14,7 +14,6 @@ const StyledDiv = styled.div`
 `;
 
 const TableWrap = styled(Table)`
-  height: 479px;
   .ant-table-thead {
     background: #eff0f5 0% 0% no-repeat padding-box;
   }

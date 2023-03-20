@@ -93,7 +93,7 @@ export const KeyIconSVG = () => (
     viewBox="0 0 18 18"
   >
     <defs>
-      <clipPath id="clip-path">
+      <clipPath id="clipPath">
         <rect
           id="Rectangle_6267"
           data-name="Rectangle 6267"
@@ -109,7 +109,7 @@ export const KeyIconSVG = () => (
     <g
       id="Mask_Group_13040"
       data-name="Mask Group 13040"
-      clip-path="url(#clip-path)"
+      clipPath="url(#clipPath)"
     >
       <path
         id="Icon_ionic-md-key"
@@ -237,7 +237,7 @@ export const StringIcon = () => (
     viewBox="0 0 16 16"
   >
     <defs>
-      <clipPath id="clip-path">
+      <clipPath id="clipPath">
         <rect
           id="Rectangle_6240"
           data-name="Rectangle 6240"
@@ -252,7 +252,7 @@ export const StringIcon = () => (
       id="Mask_Group_13036"
       data-name="Mask Group 13036"
       transform="translate(5403 4575.888)"
-      clip-path="url(#clip-path)"
+      clipPath="url(#clipPath)"
     >
       <g
         id="Group_17706"
@@ -272,7 +272,7 @@ export const StringIcon = () => (
           transform="translate(0 9.462)"
           fill="#8d9cb5"
           stroke="#8d9cb5"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <rect width="10.285" height="1.083" stroke="none" />
           <rect x="0.5" y="0.5" width="9.285" height="0.083" fill="none" />
@@ -291,7 +291,7 @@ export const HashIcon = () => (
     viewBox="0 0 16 16"
   >
     <defs>
-      <clipPath id="clip-path">
+      <clipPath id="clipPath">
         <rect
           id="Rectangle_6229"
           data-name="Rectangle 6229"
@@ -306,7 +306,7 @@ export const HashIcon = () => (
       id="Mask_Group_13035"
       data-name="Mask Group 13035"
       transform="translate(5435 4576)"
-      clip-path="url(#clip-path)"
+      clipPath="url(#clipPath)"
     >
       <path
         id="Path_15778"
@@ -328,7 +328,7 @@ export const KeyIcon = () => (
     viewBox="0 0 18 18"
   >
     <defs>
-      <clipPath id="clip-path">
+      <clipPath id="clipPath">
         <rect
           id="Rectangle_6267"
           data-name="Rectangle 6267"
@@ -336,7 +336,7 @@ export const KeyIcon = () => (
           height="18"
           fill="#fff"
           stroke="#707070"
-          stroke-width="1"
+          strokeWidth="1"
           opacity="0.551"
         />
       </clipPath>
@@ -344,7 +344,7 @@ export const KeyIcon = () => (
     <g
       id="Mask_Group_13040"
       data-name="Mask Group 13040"
-      clip-path="url(#clip-path)"
+      clipPath="url(#clipPath)"
     >
       <path
         id="Icon_ionic-md-key"
@@ -366,7 +366,7 @@ export const InfoIcon = () => {
     viewBox="0 0 16 16"
   >
     <defs>
-      <clipPath id="clip-path">
+      <clipPath id="clipPath">
         <rect
           id="Rectangle_6221"
           data-name="Rectangle 6221"
@@ -377,7 +377,7 @@ export const InfoIcon = () => {
         />
       </clipPath>
     </defs>
-    <g id="info" transform="translate(-0.097)" clip-path="url(#clip-path)">
+    <g id="info" transform="translate(-0.097)" clipPath="url(#clipPath)">
       <g
         id="Mask_Group_62"
         data-name="Mask Group 62"
